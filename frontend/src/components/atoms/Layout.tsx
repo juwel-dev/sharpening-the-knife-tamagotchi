@@ -1,5 +1,16 @@
+import styled from "@emotion/styled";
 import { PropsWithChildren } from "react";
 
 export default function Layout({ children }: Readonly<PropsWithChildren>) {
-  return <div>{children}</div>;
+  return <StyledDiv>{children}</StyledDiv>;
 }
+
+const StyledDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(320deg, #293a21 0%, #3b7230 100%);
+
+  height: 1200px;
+  width: 1200px;
+`;
