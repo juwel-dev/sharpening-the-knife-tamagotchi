@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+rectangle "Tamagotchi"
+
+actor "User"
+
+"User" -down-> "Tamagotchi" : Interacts with
+
+
+
+@enduml

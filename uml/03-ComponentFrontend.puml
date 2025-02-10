@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+actor "User"
+
+rectangle "Tamagotchi" {
+    rectangle "Frontend"{
+        package "Page"
+        package "Organism"
+        package "Molecule"
+        package "Atom"
+
+        package "Action"
+        package "ActionCreator"
+
+        'package "Epics"
+
+        package "Flux"{
+            package "Dispatcher"
+            package "Reducer"
+            package "Store"
+            package "Query"
+        }
+
+    }
+}
+
+"User" --> "Page" : Starting Point
+
+"Page" -down-> "Organism" : Contains
+"Organism" --> "Molecule" : Contains
+"Molecule" --> "Atom" : Contains
+"Page" --> "Atom" : Contains
+"Page" --> "Molecule" : Contains
+"Organism" --> "Atom" : Contains
+"Page" -right-> "ActionCreator" : Create action
+"ActionCreator" -right-> "Action" : Create action
+"Page" -right-> "Dispatcher" : Dispatch action
+
+"Reducer" -left-> "Action" : Listen to
+"Reducer" --> "Store" : Update Store
+
+"Query" --> "Store" : Get Data
+"Page" --> "Query" : Get Data
+
+'"Epics" -up-> "Dispatcher" : Listen to
+'"Epics" --> "Action" : Listen to
+
+@enduml
