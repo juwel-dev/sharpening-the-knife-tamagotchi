@@ -11,6 +11,7 @@ const foodStore = {
   pizza: { fullness: 50 },
   banana: { fullness: 30 },
   apple: { fullness: 20 },
+  bonbon: { fullness: 1 },
 };
 
 export type FoodType = typeof foodStore;
