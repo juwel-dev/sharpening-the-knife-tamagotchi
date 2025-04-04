@@ -3,9 +3,9 @@
 
 rectangle "Tamagotchi"
 
-actor "User"
+actor "Player"
 
-"User" -down-> "Tamagotchi" : Interacts with
+"Player" -down-> "Tamagotchi" : Interacts with
 
 
 
