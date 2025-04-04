@@ -7,7 +7,7 @@ type State = {
   setFullness: (fullness: number) => void;
 };
 
-const foodStore = {
+export const foodStore = {
   pizza: { fullness: 50 },
   banana: { fullness: 30 },
   apple: { fullness: 20 },

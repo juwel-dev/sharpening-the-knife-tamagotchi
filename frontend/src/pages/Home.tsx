@@ -12,10 +12,15 @@ export default function Home() {
 
   return (
     <Layout>
-      <h2>{fullness}</h2>
+      <h2 data-testid={"fullness"}>{fullness}</h2>
       <div style={{ display: "flex", gap: "1rem" }}>
         {foodNames.map((name) => (
-          <button key={name} type={"button"} onClick={() => feed(name)}>
+          <button
+            key={name}
+            type={"button"}
+            onClick={() => feed(name)}
+            data-testid={`feed_${name}`}
+          >
             FEED {name.toUpperCase()}
           </button>
         ))}
