@@ -2,12 +2,13 @@
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "bdd": "TS_NODE_PROJECT=./tsconfig.cucumber.json cucumber-js tests/bdd/features/*.feature --require-module ts-node/register --require-module tsconfig-paths/register --require tests/bdd/world.ts  --require tests/bdd/steps/Given/*.ts --require tests/bdd/steps/Then/*.ts --require tests/bdd/steps/When/*.ts --format html:reports/report.html --format summary --format @cucumber/pretty-formatter --format cucumber-console-formatter",
     "test": "npx playwright test",
     "test-ui": "npx playwright test --ui"
   },
